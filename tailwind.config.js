@@ -7,11 +7,17 @@ module.exports = {
   ],
   theme: {
     extend: {
-      backgroundImage: {
-        'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
-        'gradient-conic':
-          'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
-      },
+      colors: {
+        voteButton: 'hsl(223, 19%, 93%)',
+        button: 'hsl(239, 57%, 85%)',
+        vote: 'hsl(212, 24%, 26%)',
+        username: 'hsl(212, 24%, 26%)',
+        createdAt: 'hsl(211, 10%, 45%)',
+        replyTo: 'hsl(238, 40%, 52%)',
+        delete: "hsl(358, 79%, 66%)",
+        edit: 'hsl(238, 40%, 52%)',
+        cancel: 'hsl(212, 24%, 26%)',
+      }
     },
   },
   plugins: [],

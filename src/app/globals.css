@@ -2,26 +2,120 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
+/* Small */
+@media (min-width:768px) {
+  .container {
+    width: 750px;
   }
 }
 
+/* Medium */
+@media (min-width:992px) {
+  .container {
+    width: 950px;
+  }
+}
+
+/* Large */
+@media (min-width:1200px) {
+  .container {
+    width: 1170px;
+  }
+}
+
+
+.container {
+  padding-left: 10px;
+  padding-right: 10px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
 body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  background-color: hsl(223, 19%, 93%);
+}
+
+.none {
+  visibility: hidden;
+  position: absolute;
+  left: -500%;
+}
+
+.hide-alert {
+  transform: translateX(-500%);
+}
+
+.delete-option {
+  opacity: .3;
+}
+
+textarea {
+  resize: none;
+}
+
+textarea:focus {
+  outline: none;
+}
+
+@media (max-width:992px) {
+
+  .comment,
+  .replie {
+    flex-direction: column-reverse;
+    align-items: normal;
+  }
+
+  .vote {
+    flex-direction: row;
+    width: fit-content;
+    margin: 1rem 0;
+  }
+
+  .vote>span {
+    margin: 0 1rem;
+  }
+
+  .reply,
+  .delete-edit {
+    position: absolute;
+    bottom: 3rem;
+    right: 1rem;
+  }
+
+  .add-comment,
+  .add-reply {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(1fr, 1fr));
+  }
+
+  .add-comment textarea {
+    width: 100%;
+  }
+
+  .first {
+    grid-area: 1 / 1 / 2 /4;
+    width: 100%;
+    margin: 0 auto 1rem;
+  }
+
+  .second {
+    grid-area: 3 / 1 / 4 /2;
+  }
+
+  .third {
+    grid-area: 3/3/4/4;
+  }
+
+  .replies {
+    width: 100%;
+  }
+
+  .replies {
+    overflow: initial;
+    transform: translateX(0);
+  }
+
+  .replies>article {
+    left: 0;
+  }
 }
